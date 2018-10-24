@@ -167,7 +167,7 @@ parameters:
   description: URL to Git source
   name: GIT_URI
   required: true
-  value: https://github.com/jamesfalkner/microsweeper-demo.git
+  value: https://github.com/bbenz/microsweeper-demo.git
 - displayName: Git Ref
   description: Git reference branch/tag
   name: GIT_REF
