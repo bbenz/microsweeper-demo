@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: microsweeper-demo
+  labels:
+    app: microsweeper-demo
+spec:
+  type: LoadBalancer 
+  ports:
+  - name: http
+    protocol: TCP
+    port: 80
+    targetPort: 8080
+  selector:
+    app: microsweeper-demo

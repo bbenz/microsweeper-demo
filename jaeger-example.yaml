@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hotrod
+spec:
+  selector:
+    matchLabels:
+      app: hotrod
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hotrod
+    spec:
+      containers:
+      - name: hotrod
+        image: jaegertracing/example-hotrod:latest
+        imagePullPolicy: Always
+        args: ["all"]
+        ports:
+        - containerPort: 8080
+        - containerPort: 8081
+        - containerPort: 8082
+        - containerPort: 8083
+        env:
+        - name: TEST
+          value: value
+        resources:
+          limits:
+            memory: 128Mi
+
+      - image: jaegertracing/jaeger-agent
+        name: jaeger-agent
+        ports:
+        - containerPort: 5775
+          protocol: UDP
+        - containerPort: 6831
+          protocol: UDP
+        - containerPort: 6832
+          protocol: UDP
+        - containerPort: 5778
+          protocol: TCP
+        args: ["--collector.host-port=simplest-collector:14267"]
+        resources:
+          limits:
+            memory: 128Mi
