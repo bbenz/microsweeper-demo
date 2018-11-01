@@ -25,11 +25,13 @@ public class ScoreboardServiceCosmos implements ScoreboardService {
 
     private MongoClient mongoClient;
 
+    //Comment this ad replace with below.
+
     @Inject
     @ConfigProperty(name="SCORESDB_uri")
     private String uri;
     
-  // private String uri = "mongodb://microsweeper:3dQRF3DQPgHt0oDqKlWcH64GKHcS1HYsrmy1lOsBWOAV2FE9hYw8ONswHshSXgy0VA==@demo.documents.azure.com:443/?ssl=true&replicaSet=globaldb";
+    //private String uri = "mongodb://microsweeper:3dQRF3DQPgHt0oDqKlWcH64GKHcS1HYsrmy1lOsBWOAV2FE9hYw8ONswHshSXgy0VA==@demo.documents.azure.com:443/?ssl=true&replicaSet=globaldb";
 
     private Logger LOG = Logger.getLogger(ScoreboardServiceCosmos.class.getName());
 

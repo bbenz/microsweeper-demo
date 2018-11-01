@@ -54,13 +54,20 @@
         </plugins>
     </build>
 
-    <profiles>
+ <profiles>
         <profile>
             <id>openshift</id>
         </profile>
     </profiles>
     <dependencies>
-
+<dependency>
+          <groupId>io.thorntail</groupId>
+          <artifactId>jaeger</artifactId>
+</dependency>
+<dependency>
+  <groupId>io.thorntail</groupId>
+  <artifactId>microprofile-opentracing</artifactId>
+</dependency>
         <dependency>
             <groupId>io.thorntail</groupId>
             <artifactId>jaxrs</artifactId>
